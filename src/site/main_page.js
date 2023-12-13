@@ -4,7 +4,6 @@ const MainPage = () => {
      return (
      <div class="container">
      <div class="main-picture">
-          <div class="filter"></div>
      <div class="container_main">
      <header>
       <li1>Home</li1>
