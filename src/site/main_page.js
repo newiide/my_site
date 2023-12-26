@@ -1,42 +1,113 @@
 import './main_page.css';
 
-const MainPage = () => {
+const Header = () => {
      return (
-     <div class="container">
-     <div class="main-picture">
-     <div class="container_main">
-     <header>
-      <li1>Home</li1>
-      <li1>Recipes</li1>
-      <li1>Advice</li1>
-      <li1>Contact</li1>
-      <li2>Log In</li2>
-      <li2>Sign In</li2>
-     </header>
-      <div>
-       <div class="title">
-        Name??
-       </div>
-       <div class="description">
-       The taste of home, ok for the soul<br /><br />
+          <header>
+          <ul class="left-menu">
+              <li onClick={() => window.location.href = "main_page.js"}
+          class="home">
+                Home</li>
+              <li>Recipes</li>
+              <li>Advice</li>
+              <li>Contact</li>
+          </ul>
+          <ul class="right-menu">
+              <li
+              onClick={() => window.location.href = "sign_in_page.js"}
+              class="sign in">
+                Log In</li>
+              <li>Sign In</li>
+          </ul>
+      </header>
+     );
+   }
    
-        Explore the world of food
+   const Title = () => {
+     return (
+       <div className="title">
+         YOLIBEOB
        </div>
-
-       <div>
-        <input type="email" placeholder="What do you want to cook?" />
-        <button>submit</button>
+     );
+   }
+   
+   const Description = () => {
+     return (
+       <div className="description">
+         The taste of home, cook for the soul<br /><br />
+         Explore the world of food
+       </div>
+     );
+   }
+   
+   const Inputs = () => {
+     return (
+       <div className="inputs">
+         <input type="email" placeholder="What do you want to cook?" />
+         <button>submit</button>
+       </div>
+     );
+   }
+   const Why_us = () => {
+    return (
+      <>
+        <div className="title2">Why Choose Us?</div>
+        <div className="grid section-2">
+          <div className="grid-item">
+            <div className="img">
+              <img src="./fg.jpg" alt="Art School Australia" />
+              <div className="headersmall">Exotic Recipes</div>
+              <div className="textsmall">
+                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+                pupupupupup upupupu.
+              </div>
+            </div>
+          </div>
+          <div className="grid-item">
+            <div className="img">
+              <img src="./22.jpg" alt="English in Argentina" />
+              <div className="headersmall">Detailed Steps</div>
+              <div className="textsmall">
+                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+                pupupupupup upupupu.
+              </div>
+            </div>
+          </div>
+          <div className="grid-item">
+            <div className="img">
+              <img src="./fgfgg.jpg" alt="Engineering" />
+              <div className="headersmall"></div>
+              <div className="textsmall">
+                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+                pupupupupup upupupu.
+              </div>
+            </div>
+          </div>
+          {/* Додайте подібні блоки для інших партнерів */}
         </div>
+      </>
+    );
+  };
+    
+
+   const MainPage = () => {
+     return (
+       <div className="container">
+         <div className="main-picture">
+           <div className="container_main">
+             <Header />
+             <div>
+               <Title />
+               <Description />
+               <Inputs />
+               
+             </div>
+           </div>
+         </div>
+         <div className="container_why_us">
+               <Why_us />
+               </div>
        </div>
-      </div>
-     </div>
-    </div>
-         
-
-
-          
-     )
-}
-
-
-export default MainPage;
+     );
+   }
+   
+   export default MainPage;

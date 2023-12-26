@@ -1,11 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
 import MainPage from './site/main_page';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-function App() {
-  return (
-    <MainPage/>
+const renderApp = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <MainPage />
+    </React.StrictMode>,
+    document.getElementById('root')
   );
-}
+};
 
-export default App;
+renderApp();
+
+export default MainPage;
