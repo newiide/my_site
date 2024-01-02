@@ -2,6 +2,8 @@
   --main-fish: rgb(228 145 94);
   --main-transition: rgb(177 181 92);
   --animation-duration-start: 1s;
+  --main-background: rgb(229 229 227);
+  --main-gray: #c2c3be;
 }
 
 @font-face {
@@ -26,6 +28,7 @@ body {
   min-width: 900px;
   margin: auto;
   margin-bottom: 50px;
+  background-color: rgb(229 229 227);
 }
 
 .main-picture {
@@ -185,7 +188,21 @@ header {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
+  animation: left-menu-appears var(--animation-duration-start);}
+
+  @keyframes left-menu-appears {
+    0% {
+      opacity: 0.5;
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
 
 .left-menu li {
   display: inline-block;
@@ -199,7 +216,19 @@ header {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
+  animation: right-menu-appears var(--animation-duration-start);}
+
+  @keyframes right-menu-appears {
+    0% {
+      opacity: 0.5;
+      transform: translateX(100%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
 .right-menu li {
   display: inline-block;
@@ -213,3 +242,83 @@ header {
 .right-menu li:hover {
   color: var(--main-transition);
 }
+.container_why_us{
+  width: 60%;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: auto;
+  margin-bottom: 50px;
+  height: 600px;
+  
+}
+
+.title2 {
+  font-size: 40px;
+  color: #c2c3be;
+  margin-top: 70px;
+  margin-bottom: 4vw;
+  text-align: center;
+  font-family: 'Junegull', sans-serif;
+ }
+
+ .grid.section-2 {
+  display: flex;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 30px;
+ }
+
+ .section-2.grid .grid-item {
+  width: 100%;
+  aspect-ratio: 1/1.5;
+  padding: 40px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  -webkit-box-shadow: 10px 10px 19px -8px rgba(214,214,214,1);
+  -moz-box-shadow: 10px 10px 19px -8px rgba(214,214,214,1);
+  box-shadow: 10px 10px 19px -8px rgb(76, 76, 76);
+ }
+
+ .img {
+  background: url('./images/exotic.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 50%;
+  width: 100%;
+  border-radius: 20px;
+ }
+ .img2 {
+  background: url('./images/video.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 50%;
+  width: 100%;
+  border-radius: 20px;
+ }
+ .img3 {
+  background: url('./images/steps.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 50%;
+  width: 100%;
+  border-radius: 20px;
+ }
+
+
+ .headersmall{
+  font-size: 25px;
+  margin-top: 10%;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif, bold;
+  margin-bottom: 20px;
+ }
+
+ .textsmall{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+ }
+
+
+ 

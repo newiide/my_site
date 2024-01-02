@@ -1,113 +1,126 @@
 import './main_page.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import SignIn from './sign_in_page';
 
-const Header = () => {
-     return (
-          <header>
-          <ul class="left-menu">
-              <li onClick={() => window.location.href = "main_page.js"}
-          class="home">
-                Home</li>
-              <li>Recipes</li>
-              <li>Advice</li>
-              <li>Contact</li>
-          </ul>
-          <ul class="right-menu">
-              <li
-              onClick={() => window.location.href = "sign_in_page.js"}
-              class="sign in">
-                Log In</li>
-              <li>Sign In</li>
-          </ul>
-      </header>
-     );
-   }
-   
-   const Title = () => {
-     return (
-       <div className="title">
-         YOLIBEOB
-       </div>
-     );
-   }
-   
-   const Description = () => {
-     return (
-       <div className="description">
-         The taste of home, cook for the soul<br /><br />
-         Explore the world of food
-       </div>
-     );
-   }
-   
-   const Inputs = () => {
-     return (
-       <div className="inputs">
-         <input type="email" placeholder="What do you want to cook?" />
-         <button>submit</button>
-       </div>
-     );
-   }
-   const Why_us = () => {
-    return (
-      <>
-        <div className="title2">Why Choose Us?</div>
-        <div className="grid section-2">
-          <div className="grid-item">
-            <div className="img">
-              <img src="./fg.jpg" alt="Art School Australia" />
-              <div className="headersmall">Exotic Recipes</div>
-              <div className="textsmall">
-                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
-                pupupupupup upupupu.
-              </div>
-            </div>
+
+function Header() {
+  return (
+    <header>
+      <ul class="left-menu">
+        <li
+          class="home">Home</li>
+        <li>Recipes</li>
+        <li>Advice</li>
+        <li>Contact</li>
+      </ul>
+      <ul class="right-menu">
+     
+      
+        <li><NavLink href="/sign_in_page">SignIn</NavLink>
+        <router>
+            <routes> 
+              <Route exact path="/sign_in_page" element={SignIn}></Route> 
+            </routes> 
+          </router>
+        </li>
+        
+        <li>Log In</li>
+      </ul>
+    </header>
+  );
+}
+
+const Title = () => {
+  return (
+    <div className="title">
+      YOLIBEOB
+    </div>
+  );
+}
+
+const Description = () => {
+  return (
+    <div className="description">
+      The taste of home, cook for the soul<br /><br />
+      Explore the world of food
+    </div>
+  );
+}
+
+const Inputs = () => {
+  return (
+    <div className="inputs">
+      <input type="email" placeholder="What do you want to cook?" />
+      <button>submit</button>
+    </div>
+  );
+}
+const Why_us = () => {
+  return (
+    <>
+      <div className="title2">Why Choose Us?</div>
+      <div className="grid section-2">
+        <div className="grid-item">
+
+          <div className="img" src="./exotic.jpg"> </div>
+          <div className="headersmall">Exotic Recipes</div>
+          <div className="textsmall">
+            pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+            pupupupupup upupupu.
           </div>
-          <div className="grid-item">
-            <div className="img">
-              <img src="./22.jpg" alt="English in Argentina" />
-              <div className="headersmall">Detailed Steps</div>
-              <div className="textsmall">
-                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
-                pupupupupup upupupu.
-              </div>
-            </div>
-          </div>
-          <div className="grid-item">
-            <div className="img">
-              <img src="./fgfgg.jpg" alt="Engineering" />
-              <div className="headersmall"></div>
-              <div className="textsmall">
-                pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
-                pupupupupup upupupu.
-              </div>
-            </div>
-          </div>
-          {/* Додайте подібні блоки для інших партнерів */}
+
         </div>
-      </>
-    );
-  };
-    
+        <div className="grid-item">
 
-   const MainPage = () => {
-     return (
-       <div className="container">
-         <div className="main-picture">
-           <div className="container_main">
-             <Header />
-             <div>
-               <Title />
-               <Description />
-               <Inputs />
-               
-             </div>
-           </div>
-         </div>
-         <div className="container_why_us">
-               <Why_us />
-               </div>
-       </div>
-     );
-   }
-   
-   export default MainPage;
+          <div className="img2"> </div>
+          <div className="headersmall">Video lessons</div>
+          <div className="textsmall">
+            pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+            pupupupupup upupupu.
+          </div>
+
+        </div>
+        <div className="grid-item">
+
+          <div className="img3"> </div>
+          <div className="headersmall">Detailed Steps</div>
+          <div className="textsmall">
+            pupupp uppupupu. uppupupu, up p puppp upupup upuppupup
+            pupupupupup upupupu.
+          </div>
+
+        </div>
+
+      </div>
+    </>
+  );
+};
+
+
+
+const MainPage = () => {
+  return (
+    <div className="container">
+      <div className="main-picture">
+        <div className="container_main">
+          <Header />
+          <div>
+            <Title />
+            <Description />
+            <Inputs />
+
+          </div>
+        </div>
+      </div>
+      <div className="container_why_us">
+        <Why_us />
+      </div>
+    </div>
+  );
+
+}
+
+
+export default MainPage;
+
