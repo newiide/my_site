@@ -15,16 +15,11 @@ function Header() {
         <li>Contact</li>
       </ul>
       <ul class="right-menu">
-     
-      
-        <li><NavLink href="/sign_in_page">SignIn</NavLink>
-        <router>
-            <routes> 
-              <Route exact path="/sign_in_page" element={SignIn}></Route> 
-            </routes> 
-          </router>
+
+
+        <li><NavLink to="/sign_in_page">SignIn</NavLink>
         </li>
-        
+
         <li>Log In</li>
       </ul>
     </header>
