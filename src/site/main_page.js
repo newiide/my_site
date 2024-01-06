@@ -1,7 +1,7 @@
 import './main_page.css';
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
-import SignIn from './sign_in_page';
+import { NavLink } from 'react-router-dom';
+
 
 
 function Header() {
@@ -17,7 +17,7 @@ function Header() {
       <ul class="right-menu">
 
 
-        <li><NavLink to="/sign_in_page">SignIn</NavLink>
+        <li><NavLink to="/sign_in_page">Sign In</NavLink>
         </li>
 
         <li>Log In</li>
@@ -91,7 +91,40 @@ const Why_us = () => {
     </>
   );
 };
+const Recipe = () => {
+  return (
+    <>
+      
+      <div className="slider-item0 "></div>
 
+      <div className="slider-item1"></div>
+
+      <div className="slider-item2 "></div>
+      
+
+      <div className="text-container">
+      
+                <div class="title-recipe"> 
+                    Kimchi Fried Rice
+                </div>
+                <div class="ingredients">
+                Easy kimchi fried rice recipe! Kimchi and rice is stir fried with smoky bacon and spicy kimchi juice. 
+                It’s simply delicious! Main ingredients:
+                </div>
+                <li> Kimchi</li>
+                <li> Bacon</li>
+                <li> Rice</li>
+                <div class="small-description">
+                Don't miss the opportunity,
+                    you must to try this delicious dish! 
+                </div>
+                <button>More</button>
+            </div>
+      
+
+    </>
+  )
+}
 
 
 const MainPage = () => {
@@ -110,6 +143,13 @@ const MainPage = () => {
       </div>
       <div className="container_why_us">
         <Why_us />
+      </div>
+      
+      <div className="ChangingPicture">
+      <div className="title3">Recipe Of The Day</div>
+        <div className="containerChanging">
+          <Recipe />
+        </div>
       </div>
     </div>
   );
