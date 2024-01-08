@@ -1,7 +1,7 @@
 import './main_page.css';
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-import autoSwitchImages from './fuck';
+
 
 
 function Header() {
@@ -91,23 +91,37 @@ const Why_us = () => {
     </>
   );
 };
+const autoSwitchImages = () => {
+  const sliderItemNodes = document.getElementsByClassName('slider-item');
+  const [selectedNode] = document.getElementsByClassName('selected');
+
+  let nextIndex = 0;
+
+  for (let i = 0; i < sliderItemNodes.length; i++) {
+    if (sliderItemNodes[i] === selectedNode) {
+      nextIndex = (i + 1) % sliderItemNodes.length;
+      break;
+    }
+  }
+
+  selectedNode.classList.toggle('selected');
+  sliderItemNodes[nextIndex].classList.toggle('selected');
+};
+
 const Recipe = () => {
+  useEffect(() => {
+    const intervalId = setInterval(autoSwitchImages, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <>
       <div className="slider">
-      <autoSwitchImages />
-      <div className="slider-item selected"
-        style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}>
+        <div className="slider-item selected" style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}></div>
+        <div className="slider-item" style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}></div>
+        <div className="slider-item" style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}></div>
       </div>
-      <div className="slider-item"
-        style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}>
-      </div>
-      <div className="slider-item"
-        style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}>
-      </div>
-      
-      </div>
-
       <div className="text-container">
         <div className="title-recipe"> 
           Kimchi Fried Rice
@@ -129,6 +143,10 @@ const Recipe = () => {
     </>
   );
 };
+
+      
+    
+  
 
 
 
