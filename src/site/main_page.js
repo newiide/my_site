@@ -1,5 +1,5 @@
 import './main_page.css';
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 
 
@@ -91,37 +91,43 @@ const Why_us = () => {
     </>
   );
 };
-const autoSwitchImages = () => {
-  const sliderItemNodes = document.getElementsByClassName('slider-item');
-  const [selectedNode] = document.getElementsByClassName('selected');
 
-  let nextIndex = 0;
 
-  for (let i = 0; i < sliderItemNodes.length; i++) {
-    if (sliderItemNodes[i] === selectedNode) {
-      nextIndex = (i + 1) % sliderItemNodes.length;
-      break;
-    }
-  }
 
-  selectedNode.classList.toggle('selected');
-  sliderItemNodes[nextIndex].classList.toggle('selected');
-};
-
-const Recipe = () => {
-  useEffect(() => {
-    const intervalId = setInterval(autoSwitchImages, 2000);
-
-    return () => clearInterval(intervalId);
-  }, []);
+  
+  const Slider = () => {
+    const slide1 = useRef();
+    const slide2 = useRef();
+    const slide3 = useRef();
+    const slidesRefs = [slide1, slide2, slide3];
+  
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        
+        const selectedIndex = slidesRefs.findIndex(ref => ref.current.classList.contains('selected'));
+        const nextIndex = (selectedIndex + 1) % slidesRefs.length;
+  
+        
+        slidesRefs[selectedIndex].current.classList.remove('selected');
+        slidesRefs[nextIndex].current.classList.add('selected');
+      }, 2000);
+  
+      return () => clearInterval(intervalId);
+    }, []);
 
   return (
     <>
       <div className="slider">
-        <div className="slider-item selected" style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}></div>
-        <div className="slider-item" style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}></div>
-        <div className="slider-item" style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}></div>
-      </div>
+      <div ref={slide1} className="slider-item selected" style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}></div>
+      <div ref={slide2} className="slider-item" style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}></div>
+      <div ref={slide3} className="slider-item" style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}></div>
+    </div>
+    </>
+  ); };
+
+  const Recipe = () => {
+      return(
+      <>
       <div className="text-container">
         <div className="title-recipe"> 
           Kimchi Fried Rice
@@ -140,17 +146,13 @@ const Recipe = () => {
         </div>
         <button>More</button>
       </div>
-    </>
-  );
-};
+      </>);};
+   
+
 
       
     
   
-
-
-
-<script src="./fuck.js"></script>
 
 const MainPage = () => {
   return (
@@ -173,6 +175,7 @@ const MainPage = () => {
       <div className="ChangingPicture">
       <div className="title3">Recipe Of The Day</div>
         <div className="containerChanging">
+          <Slider />
           <Recipe />
         </div>
       </div>
