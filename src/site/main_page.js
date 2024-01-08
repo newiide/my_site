@@ -1,7 +1,7 @@
 import './main_page.css';
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-
+import autoSwitchImages from './fuck';
 
 
 function Header() {
@@ -95,7 +95,7 @@ const Recipe = () => {
   return (
     <>
       <div className="slider">
-      
+      <autoSwitchImages />
       <div className="slider-item selected"
         style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}>
       </div>
