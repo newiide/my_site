@@ -94,38 +94,45 @@ const Why_us = () => {
 const Recipe = () => {
   return (
     <>
+      <div className="slider">
       
-      <div className="slider-item0 "></div>
-
-      <div className="slider-item1"></div>
-
-      <div className="slider-item2 "></div>
+      <div className="slider-item selected"
+        style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}>
+      </div>
+      <div className="slider-item"
+        style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}>
+      </div>
+      <div className="slider-item"
+        style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}>
+      </div>
       
+      </div>
 
       <div className="text-container">
-      
-                <div class="title-recipe"> 
-                    Kimchi Fried Rice
-                </div>
-                <div class="ingredients">
-                Easy kimchi fried rice recipe! Kimchi and rice is stir fried with smoky bacon and spicy kimchi juice. 
-                It’s simply delicious! Main ingredients:
-                </div>
-                <li> Kimchi</li>
-                <li> Bacon</li>
-                <li> Rice</li>
-                <div class="small-description">
-                Don't miss the opportunity,
-                    you must to try this delicious dish! 
-                </div>
-                <button>More</button>
-            </div>
-      
-
+        <div className="title-recipe"> 
+          Kimchi Fried Rice
+        </div>
+        <div className="ingredients">
+          Easy kimchi fried rice recipe! Kimchi and rice is stir fried with smoky bacon and spicy kimchi juice. 
+          It’s simply delicious! Main ingredients:
+          <ul>
+            <li> Kimchi</li>
+            <li> Bacon</li>
+            <li> Rice</li>
+          </ul>
+        </div>
+        <div className="small-description">
+          Don't miss the opportunity, you must to try this delicious dish! 
+        </div>
+        <button>More</button>
+      </div>
     </>
-  )
-}
+  );
+};
 
+
+
+<script src="./fuck.js"></script>
 
 const MainPage = () => {
   return (
