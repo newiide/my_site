@@ -2,17 +2,18 @@ import './main_page.css';
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
 
+import { scrollToBottom, ScrollToTopButton } from './main_page_components';
 
-
-function Header() {
+const Header = () => {
+  
   return (
     <header>
       <ul class="left-menu">
         <li
           class="home">Home</li>
         <li>Recipes</li>
-        <li>Advice</li>
-        <li>Contact</li>
+        <li><NavLink to="/advices">Advices</NavLink></li>
+        <li className="Contact" onClick={scrollToBottom}>Contact</li>
       </ul>
       <ul class="right-menu">
 
@@ -95,35 +96,34 @@ const Why_us = () => {
 
 
   
-  const Slider = () => {
-    const slide1 = useRef();
-    const slide2 = useRef();
-    const slide3 = useRef();
-    const slidesRefs = [slide1, slide2, slide3];
-  
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        
-        const selectedIndex = slidesRefs.findIndex(ref => ref.current.classList.contains('selected'));
-        const nextIndex = (selectedIndex + 1) % slidesRefs.length;
-  
-        
-        slidesRefs[selectedIndex].current.classList.remove('selected');
-        slidesRefs[nextIndex].current.classList.add('selected');
-      }, 2000);
-  
-      return () => clearInterval(intervalId);
-    }, []);
+const Slider = () => {
+  const slide1 = useRef();
+  const slide2 = useRef();
+  const slide3 = useRef();
+  const slidesRefs = [slide1, slide2, slide3];
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const selectedIndex = slidesRefs.findIndex(ref =>
+        ref.current.classList.contains('selected')
+      );
+      const nextIndex = (selectedIndex + 1) % slidesRefs.length;
+
+      slidesRefs[selectedIndex].current.classList.remove('selected');
+      slidesRefs[nextIndex].current.classList.add('selected');
+    }, 2000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
-    <>
-      <div className="slider">
-      <div ref={slide1} className="slider-item selected" style={{ backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}></div>
-      <div ref={slide2} className="slider-item" style={{ backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}></div>
-      <div ref={slide3} className="slider-item" style={{ backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}></div>
+    <div className="slider">
+      <div className="slider-item selected" ref={slide1} style={{ zIndex: 3, backgroundImage: `url('./images/d7307596991754fa6a6d299e24071e16.jpg')` }}></div>
+      <div className="slider-item" ref={slide2} style={{ zIndex: 2, backgroundImage: `url('./images/6263136925ab9fe1f3b46814a7610ab1.jpg')` }}></div>
+      <div className="slider-item" ref={slide3} style={{ zIndex: 1, backgroundImage: `url('./images/f5849cbb3fdd462ec2d075eaf2048683.jpg')` }}></div>
     </div>
-    </>
-  ); };
+  );
+};
 
   const Recipe = () => {
       return(
@@ -140,16 +140,43 @@ const Why_us = () => {
             <li> Bacon</li>
             <li> Rice</li>
           </ul>
-        </div>
-        <div className="small-description">
+          <div className="small-description">
           Don't miss the opportunity, you must to try this delicious dish! 
         </div>
+        </div>
+        
         <button>More</button>
       </div>
+      
       </>);};
    
+   const Footer = () => {
+    return (
+      <footer>
+        <div className="footer-container">
+          <div className="contact-info">
+            <h3>Contact Us</h3>
+            <p>123 Street Name, City, Country</p>
+            <p>Phone: +1234567890</p>
+            <p>Email: info@example.com</p>
+          </div>
+          <div className="social-links">
+            <h3>Follow Us</h3>
+            <ul>
+              <p><a href="https://facebook.com">Facebook</a></p>
+              <p><a href="https://twitter.com">Twitter</a></p>
+              <p><a href="https://instagram.com">Instagram</a></p>
+            </ul>
+          </div>
+        </div>
+        <div className="copyright">
+          <p>&copy; 2024 YOLIBEOB. All Rights Reserved.</p>
+        </div>
+      </footer>
+    );
+  };
 
-
+  
       
     
   
@@ -159,8 +186,10 @@ const MainPage = () => {
     <div className="container">
       <div className="main-picture">
         <div className="container_main">
+          
           <Header />
-          <div>
+          <scrollToBottom />
+          <div className="Name">
             <Title />
             <Description />
             <Inputs />
@@ -179,11 +208,10 @@ const MainPage = () => {
           <Recipe />
         </div>
       </div>
+      <Footer />
+      <ScrollToTopButton /> 
     </div>
   );
-
-}
-
+};
 
 export default MainPage;
-
