@@ -2,12 +2,13 @@ import React from 'react';
 import './advices.css';
 import { scrollToBottom, ScrollToTopButton } from './main_page_components';
 import { NavLink } from 'react-router-dom';
+import { useRef, useEffect } from "react";
 import Image1 from './images/advice1.jpg';
 import Image2 from './images/advice2.jpg';
 import Image3 from './images/advice3.jpg';
 import Image4 from './images/advice4.jpg';
-import Image5 from './images/imageslide.jpg';
-import Image6 from './images/imageslide2.jpg';
+
+
 
 const Header = () => {
 
@@ -113,8 +114,36 @@ const Advices = () => {
     );
 }
 
+  const Foooter = () => {
+    return (
+      <footer>
+        <div className="footer-container">
+          <div className="contact-info">
+            <h3>Contact Us</h3>
+            <p>123 Street Name, City, Country</p>
+            <p>Phone: +1234567890</p>
+            <p>Email: info@example.com</p>
+          </div>
+          <div className="social-links">
+            <h3>Follow Us</h3>
+            <ul>
+              <p><a href="https://facebook.com">Facebook</a></p>
+              <p><a href="https://twitter.com">Twitter</a></p>
+              <p><a href="https://instagram.com">Instagram</a></p>
+            </ul>
+          </div>
+        </div>
+        <div className="copyright">
+          <p>&copy; 2024 YOLIBEOB. All Rights Reserved.</p>
+        </div>
+      </footer>
+    );
+  };
+
+  
 const AdvicesPage = () => {
     return (
+        <>
         <div className="backgroundadvice">
             <div className="container_main_advice">
                 <div className="Header-background">
@@ -125,8 +154,15 @@ const AdvicesPage = () => {
                 <div className="containerAdvice">
                     <Advices />
                 </div>
+                <div className="container-slider-advice">
+                    <div className="Good-luck">Enjoy your cooking!</div>
+                    
+                    
+                </div>
             </div>
         </div>
+        <Foooter />
+        </>
     );
 }
 

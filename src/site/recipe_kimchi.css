@@ -1,0 +1,131 @@
+:root {
+    --main-fish: rgb(228 145 94);
+    --main-transition: rgb(177 181 92);
+    --animation-duration-start: 1s;
+    --main-background: rgb(229 229 227);
+    --main-gray: #c2c3be;
+    --main-text: #515150;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('https://fonts.cdnfonts.com/css/junegull');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.cdnfonts.com/css/montserrat');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 1199px) {
+    #image1 {
+        display: none;
+    }
+}
+
+body {
+    margin: 0
+}
+
+.container {
+    min-width: 900px;
+    margin: auto;
+
+    background-color: rgb(229 229 227);
+}
+
+.back_kimchi {
+    min-width: 900px;
+
+
+    width: 100%;
+    height: 3600px;
+    position: relative;
+    overflow: hidden;
+    background: url('./images/advices-back.png') rgba(0, 0, 0, 0.09);
+
+    background-blend-mode: multiply;
+
+    color: white;
+    box-sizing: border-box;
+    display: flex;
+
+    color: white;
+}
+
+.container-main {
+    width: 60%;
+    max-width: 1200px;
+    min-width: 900px;
+    margin: auto;
+    margin-bottom: 50px;
+    height: 600px;
+    margin-top: 0;
+
+}
+.Kimchi_title{
+    
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Junegull', sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  color: rgb(230 161 119);
+  text-shadow: 0px 0px 16px rgba(255, 255, 255, 1);
+  animation: title-appears var(--animation-duration-start);
+  
+}
+
+
+  .slider-kimchi{
+    box-shadow: 10px 10px 19px -8px rgb(76, 76, 76);
+    width: 100%;
+    height: 70%;
+    display: flex;
+    border-radius: 20px;
+    margin: auto;
+    
+    position: relative;
+    overflow: hidden;
+    
+    margin-top: 50px;
+      
+      
+      align-items: center;
+  }
+  
+  .slider-item-kimchi {
+    width: 50%;
+    height: 50%;
+    aspect-ratio: 1/1;
+    box-sizing: border-box;
+    position: center;
+    display: flex;
+   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    transform: translateX(-50%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    transition: 0.25s;
+   }
+   
+   .slider-item-advice.selected {
+    opacity: 1;
+  }
+   .selected {
+    z-index: 2;
+    opacity: 1;
+   }
+  

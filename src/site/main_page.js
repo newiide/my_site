@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { scrollToBottom, ScrollToTopButton } from './main_page_components';
 
 const Header = () => {
-  
+
   return (
     <header>
       <ul class="left-menu">
@@ -95,7 +95,7 @@ const Why_us = () => {
 
 
 
-  
+
 const Slider = () => {
   const slide1 = useRef();
   const slide2 = useRef();
@@ -125,15 +125,15 @@ const Slider = () => {
   );
 };
 
-  const Recipe = () => {
-      return(
-      <>
+const Recipe = () => {
+  return (
+    <>
       <div className="text-container">
-        <div className="title-recipe"> 
+        <div className="title-recipe">
           Kimchi Fried Rice
         </div>
         <div className="ingredients">
-          Easy kimchi fried rice recipe! Kimchi and rice is stir fried with smoky bacon and spicy kimchi juice. 
+          Easy kimchi fried rice recipe! Kimchi and rice is stir fried with smoky bacon and spicy kimchi juice.
           It’s simply delicious! Main ingredients:
           <ul>
             <li> Kimchi</li>
@@ -141,52 +141,57 @@ const Slider = () => {
             <li> Rice</li>
           </ul>
           <div className="small-description">
-          Don't miss the opportunity, you must to try this delicious dish! 
-        </div>
-        </div>
-        
-        <button>More</button>
-      </div>
-      
-      </>);};
-   
-   const Footer = () => {
-    return (
-      <footer>
-        <div className="footer-container">
-          <div className="contact-info">
-            <h3>Contact Us</h3>
-            <p>123 Street Name, City, Country</p>
-            <p>Phone: +1234567890</p>
-            <p>Email: info@example.com</p>
-          </div>
-          <div className="social-links">
-            <h3>Follow Us</h3>
-            <ul>
-              <p><a href="https://facebook.com">Facebook</a></p>
-              <p><a href="https://twitter.com">Twitter</a></p>
-              <p><a href="https://instagram.com">Instagram</a></p>
-            </ul>
+            Don't miss the opportunity, you must to try this delicious dish!
           </div>
         </div>
-        <div className="copyright">
-          <p>&copy; 2024 YOLIBEOB. All Rights Reserved.</p>
-        </div>
-      </footer>
-    );
-  };
 
-  
-      
-    
-  
+        <NavLink to="/recipe_kimchi" smooth={true} duration={100}>
+          <button>
+            <span>MORE</span>
+          </button>
+        </NavLink>
+      </div>
+
+    </>);
+};
+
+const Foooter = () => {
+  return (
+    <footer>
+      <div className="footer-container">
+        <div className="contact-info">
+          <h3>Contact Us</h3>
+          <p>123 Street Name, City, Country</p>
+          <p>Phone: +1234567890</p>
+          <p>Email: info@example.com</p>
+        </div>
+        <div className="social-links">
+          <h3>Follow Us</h3>
+          <ul>
+            <p><a href="https://facebook.com">Facebook</a></p>
+            <p><a href="https://twitter.com">Twitter</a></p>
+            <p><a href="https://instagram.com">Instagram</a></p>
+          </ul>
+        </div>
+      </div>
+      <div className="copyright">
+        <p>&copy; 2024 YOLIBEOB. All Rights Reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+
+
+
+
 
 const MainPage = () => {
   return (
     <div className="container">
       <div className="main-picture">
         <div className="container_main">
-          
+
           <Header />
           <scrollToBottom />
           <div className="Name">
@@ -200,16 +205,16 @@ const MainPage = () => {
       <div className="container_why_us">
         <Why_us />
       </div>
-      
+
       <div className="ChangingPicture">
-      <div className="title3">Recipe Of The Day</div>
+        <div className="title3">Recipe Of The Day</div>
         <div className="containerChanging">
           <Slider />
           <Recipe />
         </div>
       </div>
-      <Footer />
-      <ScrollToTopButton /> 
+      <Foooter />
+      <ScrollToTopButton />
     </div>
   );
 };

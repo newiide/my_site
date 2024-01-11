@@ -5,6 +5,7 @@ import MainPage from './site/main_page';
 import SignIn from './site/sign_in_page';
 import AdvicesPage from './site/advices';
 import SignInPage from './site/sign_in_page';
+import Kimchi from './site/recipe_kimchi';
 
 function App () {
   return (
@@ -12,6 +13,7 @@ function App () {
       <Route path="/" element={<MainPage />} />
       <Route path="/advices" element={<AdvicesPage />} />
       <Route path="/sign_in_page" element={<SignIn />} />
+      <Route path="/recipe_kimchi" element={<Kimchi />} />
 
       <Route path="/" element={<SignInPage />} />
       <Route path="/main_page" element={<MainPage />} />
