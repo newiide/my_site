@@ -1,0 +1,295 @@
+:root {
+  --main-fish: rgb(228 145 94);
+  --main-transition: rgb(177 181 92);
+  --animation-duration-start: 1s;
+  --main-background: rgb(229 229 227);
+  --main-gray: #c2c3be;
+  --main-text: #515150;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('https://fonts.cdnfonts.com/css/junegull');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.cdnfonts.com/css/montserrat');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 1199px) {
+  #image1 {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .container_main_advice {
+    width: 90%;
+    min-width: 900px;
+  }
+
+  .advice-item {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .advice-item img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .container_main_advice {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container_main_advice {
+    width: 60%;
+  }
+}
+
+body {
+  margin: 0
+}
+
+.backgroundadvice {
+  min-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  height: 3100px;
+  position: relative;
+  overflow: hidden;
+  background: url('./images/advices-back.png') rgba(0, 0, 0, 0.09);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  color: white;
+}
+
+.container_main_advice {
+  width: 60%;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: auto;
+  height: 600px;
+  margin-top: 0;
+
+}
+
+.advices-page {
+  max-width: 1200px;
+  max-width: 1200px;
+  min-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.containerAdvice {
+
+
+  min-width: 900px;
+  margin: auto;
+
+  height: 2800px;
+
+}
+
+.advice1 {
+
+  max-width: 1200px;
+  min-width: 900px;
+
+  display: flex;
+  height: 446px;
+  margin-bottom: 200px;
+
+
+}
+
+.number-of-advice {
+  margin: auto;
+  font-size: 2em;
+  margin-top: 100px;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 20px;
+
+}
+
+.number-of-advice2 {
+  margin: auto;
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: right;
+
+}
+
+.photo1 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  margin-right: 2%;
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+
+  text-align: justify;
+  box-sizing: border-box;
+
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  align-items: center;
+  animation: photo1-appears var(--animation-duration-start);
+}
+
+@keyframes photo1-appears {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+}
+
+.textphoto1 {
+  float: right;
+  z-index: 1;
+  transition: transform 0.3s ease, z-index 0.3s ease; 
+  display: flex;
+  background-color: var(--main-background);
+  border-radius: 25px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 10px 10px 19px -8px rgb(76, 76, 76);
+  animation: textphoto1-appears var(--animation-duration-start);
+}
+
+.textphoto1:hover {
+  
+  transform: scale(1.1); 
+  z-index: 2; 
+  
+}
+@keyframes textphoto1-appears {
+  0% {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+}
+
+.title-advice {
+  font-family: 'Junegull', sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: var(--main-transition);
+}
+
+.title-advice2 {
+  font-family: 'Junegull', sans-serif;
+  font-size: 40px;
+  font-weight: bolder;
+  margin-bottom: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+  color: var(--main-fish);
+}
+
+.text-advice {
+  text-align: justify;
+  margin-right: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.3em;
+  margin-left: 40px;
+  margin-bottom: 23px;
+  color: var(--main-text);
+}
+
+
+.advice2 {
+
+  max-width: 1200px;
+  min-width: 900px;
+  margin-bottom: 200px;
+  display: flex;
+  height: 446px;
+
+}
+
+.textphoto2 {
+  transition: transform 0.3s ease, z-index 0.3s ease; 
+  box-shadow: -10px 10px 19px -8px rgb(76, 76, 76);
+  margin-right: 2%;
+  z-index: 1;
+  display: flex;
+  background-color: var(--main-background);
+  border-radius: 25px;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  animation: textphoto2-appears var(--animation-duration-start);
+}
+.textphoto2:hover {
+  
+  transform: scale(1.1); 
+  z-index: 2; 
+  
+}
+@keyframes textphoto2-appears {
+  0% {
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+}
+
+
+.photo2 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+
+  border-radius: 20px;
+
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+
+  text-align: justify;
+  box-sizing: border-box;
+
+  background-repeat: no-repeat;
+  justify-content: space-between;
+  align-items: center;
+  animation: photo2-appears var(--animation-duration-start);
+}
+
+@keyframes photo2-appears {
+  0% {
+    opacity: 0.5;
+    transform: translateX(100%);
+  }
+}
+
+
+ .Good-luck{
+  text-align: center;
+  color: var(--main-transition);
+  font-family: 'Junegull', sans-serif;
+  font-size: 50px;
+
+ }
