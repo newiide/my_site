@@ -1,7 +1,6 @@
 import './main_page.css';
 import React, { useState, useRef, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-
 import { scrollToBottom, ScrollToTopButton } from './main_page_components';
 
 const Header = () => {
@@ -9,18 +8,13 @@ const Header = () => {
   return (
     <header>
       <ul class="left-menu">
-        <li
-          class="home">Home</li>
-        <li>Recipes</li>
+        <li>Home</li>
+        <li><NavLink to="/recipes">Recipes</NavLink></li>
         <li><NavLink to="/advices">Advices</NavLink></li>
         <li className="Contact" onClick={scrollToBottom}>Contact</li>
       </ul>
       <ul class="right-menu">
-
-
-        <li><NavLink to="/sign_in_page">Sign In</NavLink>
-        </li>
-
+        <li><NavLink to="/sign_in_page">Sign In</NavLink></li>
         <li>Log In</li>
       </ul>
     </header>
@@ -125,6 +119,7 @@ const Slider = () => {
   );
 };
 
+
 const Recipe = () => {
   return (
     <>
@@ -145,7 +140,7 @@ const Recipe = () => {
           </div>
         </div>
 
-        <NavLink to="/recipe_kimchi" smooth={true} duration={1000}>
+        <NavLink to="/recipe_kimchi" smooth={true} duration={500}>
           <button>
             <span>MORE</span>
           </button>

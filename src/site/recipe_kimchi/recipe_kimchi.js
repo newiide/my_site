@@ -1,6 +1,7 @@
 import './recipe_kimchi.css';
-import React, { useState, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
+import YouTube from 'react-youtube';
 
 import { scrollToBottom, ScrollToTopButton } from '../main_page/main_page_components';
 
@@ -10,18 +11,12 @@ const Header = () => {
   return (
     <header>
       <ul class="left-menu">
-        <li
-          class="home"><NavLink to="/main_page">Home</NavLink></li>
-        <li>Recipes</li>
-        <li><NavLink to="/advices">Advices</NavLink></li>
+        <li><NavLink to="/main_page">Home</NavLink></li>
+        <li><NavLink to="/recipes">Recipes</NavLink></li>
+        <li> <NavLink to="/advices">Advices</NavLink></li>
         <li className="Contact" onClick={scrollToBottom}>Contact</li>
       </ul>
-      <ul class="right-menu">
-
-
-        <li><NavLink to="/sign_in_page">Sign In</NavLink>
-        </li>
-
+      <ul class="right-menu"><li><NavLink to="/sign_in_page">Sign In</NavLink></li>
         <li>Log In</li>
       </ul>
     </header>
@@ -83,105 +78,98 @@ const Kimchi_ingredients = () => {
         Ingredients
       </div>
       <div className="parts">
-      <div className="first-part">
-        <ul>
-          <li> 3 tablespoons unsalted butter</li>
-          <li> 1 cup roughly chopped kimchi (6 ounces)</li>
-          <li> 2 tablespoons kimchi juice, or to taste</li>
-          <li> ½cup small-dice Spam, ham or leftover cooked meat</li>
-          <li> 2 cups cooked, cooled rice (preferably short-grain)</li>
-          <li> Crumbled or slivered nori (roasted seaweed) for garnish</li>
-        </ul>
-      </div>
-      <div className="second-part">
-        <ul>
-          <li> Sesame seeds for garnish</li>
-          <li> 2 eggs</li>
-          <li> 2 teaspoons vegetable oil</li>
-          <li> 1 teaspoon sesame oil, or to taste</li>
-          <li> 2 teaspoons soy sauce, or to taste </li>
-          <li> Sesame seeds for garnish</li>
-        </ul>
-      </div>
+        <div className="first-part">
+          <ul>
+            <li> 3 tablespoons unsalted butter</li>
+            <li> 1 cup roughly chopped kimchi (6 ounces)</li>
+            <li> 2 tablespoons kimchi juice, or to taste</li>
+            <li> ½cup small-dice Spam, ham or leftover cooked meat</li>
+            <li> 2 cups cooked, cooled rice (preferably short-grain)</li>
+            <li> Crumbled or slivered nori (roasted seaweed) for garnish</li>
+          </ul>
+        </div>
+        <div className="second-part">
+          <ul>
+            <li> Sesame seeds for garnish</li>
+            <li> 2 eggs</li>
+            <li> 2 teaspoons vegetable oil</li>
+            <li> 1 teaspoon sesame oil, or to taste</li>
+            <li> 2 teaspoons soy sauce, or to taste </li>
+            <li> Sesame seeds for garnish</li>
+          </ul>
+        </div>
       </div>
     </div>
   );
 }
 
+const stepsData = [
+  {
+    title: "Step 1",
+    text: "On medium high heat preheat a pan/wok and once heated, add the cooking oil and spread it well with a spatula. Add garlic to the pan and stir for 10 seconds. Next, add bacon and stir until half-cooked.",
+    imageUrl: "./images/step1.jpg",
+  },
+  {
+    title: "Step 2",
+    text: "Add the kimchi to the pan, stirring until it’s 80% cooked.",
+    imageUrl: "/images/step2.jpg",
+  },
+  {
+    title: "Step 3",
+    text: "(Optional) Add the mushrooms and mix them well for a few seconds. Reduce the heat to medium-medium low.",
+    imageUrl: "/images/step3.jpg",
+  },
+  {
+    title: "Step 4",
+    text: "Add the rice and the kimchi juice. Mix all of them together well and thoroughly.",
+    imageUrl: "/images/step4.jpg",
+  },
+  {
+    title: "Step 5",
+    text: "Add the sesame oil and mix them well. Remove the pan from the heat.",
+    imageUrl: "/images/step5.jpg",
+  },
+  {
+    title: "Step 6",
+    text: "Serve the kimchi fried rice on a plate. Garnish with the sesame seeds, green onions, and seaweed strips (all optional). Place the cooked egg on top. Enjoy!",
+    imageUrl: "/images/step6.jpg",
+  },
+];
+
 const Steps = () => {
-  return(
+  return (
     <>
-<div className="container-steps">
-<div className="title-step">
-        Step 1
-      </div>
-      <div className="kimchi-text">
-       On medium high heat preheat a pan/wok and once heated, add the cooking oil and spread it well with a spatula. <br></br><br></br>
- Add garlic to the pan and stir for 10 seconds. Next, add bacon and stir until half-cooked.
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step1.jpg')`}}>
-
-      </div>
-</div>
-<div className="container-steps">
-<div className="title-step">
-        Step 2
-      </div>
-      <div className="kimchi-text">
-      Add the kimchi to the pan, stirring until it’s 80% cooked.
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step2.jpg')`}}>
-
-      </div>
-</div>
-<div className="container-steps">
-<div className="title-step">
-        Step 3
-      </div>
-      <div className="kimchi-text">
-      (Optional) Add the mushrooms and mix them well for a few seconds. Reduce the heat to medium-medium low.
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step3.jpg')`}}>
-
-      </div>
-</div>
-<div className="container-steps">
-<div className="title-step">
-        Step 4
-      </div>
-      <div className="kimchi-text">
-      Add the rice and the kimchi juice. Mix all of them together well and thoroughly.
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step4.jpg')`}}>
-
-      </div>
-</div>
-<div className="container-steps">
-<div className="title-step">
-        Step 5
-      </div>
-      <div className="kimchi-text">
-      Add the sesame oil and mix them well. Remove the pan from the heat.
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step5.jpg')`}}>
-
-      </div>
-</div>
-<div className="container-steps">
-<div className="title-step">
-        Step 6
-      </div>
-      <div className="kimchi-text">
-      Serve the kimchi fried rice on a plate. Garnish with the sesame seeds, 
-      green onions, and seaweed strips (all optional). Place the cooked egg on top. Enjoy!
-      </div>
-      <div className="kimchi-step-photo" style={{ backgroundImage: `url('./images/step6.jpg')`}}>
-
-      </div>
-</div>
-</>
+      {stepsData.map((step, index) => (
+        <div key={index} className="container-steps">
+          <div className="title-step">{step.title}</div>
+          <div className="kimchi-text">{step.text}</div>
+          <div
+            className="kimchi-step-photo"
+            style={{
+              backgroundImage: `url(${step.imageUrl})`,
+              '--step-image': `url(${step.imageUrl})`,
+            }}
+          ></div>
+        </div>
+      ))}
+    </>
   );
-}
+};
+
+const Video = () => {
+  const opts = {
+    height: '525',
+    width: '767,5',
+
+  };
+
+  return (
+    <div className="container-video">
+      <YouTube videoId="Lf44Fk7H24s" opts={opts} />
+    </div>
+  );
+};
+
 
 
 
@@ -224,6 +212,7 @@ const Kimchi = () => {
           <Slider_kimchi />
           <Kimchi_ingredients />
           <Steps />
+          <Video />
         </div>
 
       </div>

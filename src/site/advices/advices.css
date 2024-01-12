@@ -26,6 +26,7 @@
     display: none;
   }
 }
+
 @media only screen and (max-width: 767px) {
   .container_main_advice {
     width: 90%;
@@ -162,7 +163,7 @@ body {
 .textphoto1 {
   float: right;
   z-index: 1;
-  transition: transform 0.3s ease, z-index 0.3s ease; 
+  transition: transform 0.3s ease, z-index 0.3s ease;
   display: flex;
   background-color: var(--main-background);
   border-radius: 25px;
@@ -176,11 +177,12 @@ body {
 }
 
 .textphoto1:hover {
-  
-  transform: scale(1.1); 
-  z-index: 2; 
-  
+
+  transform: scale(1.1);
+  z-index: 2;
+
 }
+
 @keyframes textphoto1-appears {
   0% {
     opacity: 0.5;
@@ -230,7 +232,7 @@ body {
 }
 
 .textphoto2 {
-  transition: transform 0.3s ease, z-index 0.3s ease; 
+  transition: transform 0.3s ease, z-index 0.3s ease;
   box-shadow: -10px 10px 19px -8px rgb(76, 76, 76);
   margin-right: 2%;
   z-index: 1;
@@ -244,12 +246,14 @@ body {
   justify-content: center;
   animation: textphoto2-appears var(--animation-duration-start);
 }
+
 .textphoto2:hover {
-  
-  transform: scale(1.1); 
-  z-index: 2; 
-  
+
+  transform: scale(1.1);
+  z-index: 2;
+
 }
+
 @keyframes textphoto2-appears {
   0% {
     opacity: 0.5;
@@ -286,10 +290,10 @@ body {
 }
 
 
- .Good-luck{
+.Good-luck {
   text-align: center;
   color: var(--main-transition);
   font-family: 'Junegull', sans-serif;
   font-size: 50px;
 
- }
+}
