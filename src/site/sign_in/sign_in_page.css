@@ -22,17 +22,29 @@
 }
 
 @media only screen and (max-width: 1199px) {
-  #image1 {
-    display: none;
+  .main-picture1 {
+    height: auto;
+    min-height: 400px;
+  }
+
+  .sign-in {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  .container_main {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    margin-top: 20px;
   }
 }
 
 body {
-  margin: 0
+  margin: 0;
 }
 
 .main-picture1 {
-  
   min-width: 900px;
   box-sizing: border-box;
   display: flex;
@@ -44,24 +56,19 @@ body {
   background-repeat: no-repeat;
   background-blend-mode: multiply;
   max-height: 1200px;
-
   position: relative;
   overflow: hidden;
-
   color: white;
 }
 
 .Header-background {
   margin-top: 0;
-
 }
 
 .sign-in {
-  max-width: 1200px;
-  
+  max-width: 400px;
   font-family: 'Montserrat', sans-serif;
   color: var(--main-text);
-  max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -81,7 +88,6 @@ body {
 .sign-in form {
   display: flex;
   flex-direction: column;
-
 }
 
 .sign-in form div {
@@ -104,10 +110,7 @@ body {
   border-radius: 25px;
   border: 1px solid #ccc;
   width: calc(100% - 18px);
-
   border: none;
-
-
 }
 
 .left-menu li a {
@@ -121,15 +124,11 @@ body {
 
 .container_main {
   width: 60%;
-
   max-width: 1200px;
   min-width: 900px;
-
   margin-bottom: 50px;
   height: 600px;
   margin-top: 0;
-
-
 }
 
 .sign-in button {
@@ -157,6 +156,7 @@ footer {
   color: #333;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
+  min-width: 900px;
 }
 
 .footer-container {
@@ -164,12 +164,20 @@ footer {
   justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
+  min-width: 900px;
+  
+  
 }
 
 .contact-info,
 .social-links {
-  flex: 1;
+  margin-top: 20px; /* Збільшуємо відступ між блоками у футері */
 }
+
+footer {
+  padding-top: 20px; /* Збільшуємо відступ у верхній частині футера */
+}
+
 
 .contact-info h3,
 .social-links h3 {
@@ -181,7 +189,6 @@ footer {
 .social-links ul {
   list-style: none;
   padding-left: 0;
-
 }
 
 .social-links ul li {

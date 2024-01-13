@@ -143,8 +143,7 @@ const Steps = () => {
         <div key={index} className="container-steps">
           <div className="title-step">{step.title}</div>
           <div className="kimchi-text">{step.text}</div>
-          <div
-            className="kimchi-step-photo"
+          <div className="kimchi-step-photo"
             style={{
               backgroundImage: `url(${step.imageUrl})`,
               '--step-image': `url(${step.imageUrl})`,
