@@ -1,67 +1,70 @@
 :root {
-    --main-fish: rgb(228 145 94);
-    --main-transition: rgb(177 181 92);
-    --animation-duration-start: 1s;
-    --main-background: rgb(229 229 227);
-    --main-gray: #c2c3be;
-    --main-text: #515150;
+  --main-fish: rgb(228 145 94);
+  --main-transition: rgb(177 181 92);
+  --animation-duration-start: 1s;
+  --main-background: rgb(229 229 227);
+  --main-gray: #c2c3be;
+  --main-text: #515150;
+}
+
+@font-face {
+  font-family: 'CustomFont';
+  src: url('https://fonts.cdnfonts.com/css/junegull');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: url('https://fonts.cdnfonts.com/css/montserrat');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 1199px) {
+  #image1 {
+    display: none;
   }
-  
-  @font-face {
-    font-family: 'CustomFont';
-    src: url('https://fonts.cdnfonts.com/css/junegull');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Montserrat', sans-serif;
-    src: url('https://fonts.cdnfonts.com/css/montserrat');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @media only screen and (max-width: 1199px) {
-    #image1 {
-      display: none;
-    }
-  }
-  
-  body {
-    margin: 0
-  }
-  .container {
-    min-width: 900px;
-    margin: auto;
-  
-    background-color: rgb(229 229 227);
-  }
-  .backnotfound {
-    box-sizing: border-box;
-    justify-content: center;
-    width: 100%;
-    height: 800px;
-    background: url('../main_page/images/main.png') rgba(0, 0, 0, 0.1);
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: multiply;
-    position: relative;
-    overflow: hidden;
-    margin: auto;
-    text-align: center;
-    color: white;
-  }
-  
+}
+
+body {
+  margin: 0
+}
+
+.container {
+  min-width: 900px;
+  margin: auto;
+
+  background-color: rgb(229 229 227);
+}
+
+.backnotfound {
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  height: 800px;
+  background: url('../main_page/images/main.png') rgba(0, 0, 0, 0.1);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
 h1 {
   text-align: center;
 }
 
-.containernotfound{
+.containernotfound {
   margin: auto;
   width: 60%;
   margin-top: 5%;
 }
-.poorkitty{
+
+.poorkitty {
   background: url('./poorkitty.jpg');
   width: 300px;
   height: 225px;

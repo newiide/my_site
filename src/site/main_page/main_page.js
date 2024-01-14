@@ -41,7 +41,7 @@ const Description = () => {
 const Inputs = () => {
   return (
     <div className="inputs">
-      <input type="email" placeholder="What do you want to cook?" />
+      <input type="id" placeholder="What do you want to cook?" />
       <button>submit</button>
     </div>
   );

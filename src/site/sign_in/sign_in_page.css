@@ -165,17 +165,19 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   min-width: 900px;
-  
-  
+
+
 }
 
 .contact-info,
 .social-links {
-  margin-top: 20px; /* Збільшуємо відступ між блоками у футері */
+  margin-top: 20px;
+  /* Збільшуємо відступ між блоками у футері */
 }
 
 footer {
-  padding-top: 20px; /* Збільшуємо відступ у верхній частині футера */
+  padding-top: 20px;
+  /* Збільшуємо відступ у верхній частині футера */
 }
 
 

@@ -39,7 +39,7 @@ export const ScrollToTopButton = () => {
       onClick={scrollToTop}
       title="Go to top"
     >
-  ↑
+      ↑
     </button>
   );
 };
